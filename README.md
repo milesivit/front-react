@@ -1,12 +1,53 @@
-# React + Vite
+# Front-React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositorio contiene el frontend de una aplicación CRUD de productos y usuarios, desarrollado con **React** y **Vite**.
 
-Currently, two official plugins are available:
+> ⚠️ Para que este proyecto funcione correctamente, asegúrate de tener el backend corriendo. Puedes encontrar el repositorio del backend acá: [https://github.com/milesivit/back-nodejs](https://github.com/milesivit/back-nodejs)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requisitos
 
-## Expanding the ESLint configuration
+- [Node.js](https://nodejs.org/)
+- [Git](https://git-scm.com/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Clonar el repositorio
+
+```bash
+git clone [https://github.com/milesivit/back-nodejs.git](https://github.com/milesivit/front-react.git)
+cd front-react
+```
+
+## Instalación de dependencias
+
+```bash
+npm install
+```
+
+## Ejecutar servidor
+
+```bash
+npm run dev
+```
+## Dependencias
+
+Revisa el archivo package.json para ver las dependencias usadas.
+
+## Ejemplo de body JSON Productos:
+
+```bash
+{
+    "id": 1,
+    "nombre": "monitor",
+    "precio": 48000
+}
+```
+## Ejemplo de body JSON Usuarios:
+
+```bash
+{
+    "id": 1,
+    "nombre": "Milena",
+    "contrasenia": "milena123",
+    "email": "mile@gmail.com",
+    "edad": 20
+}
+```
