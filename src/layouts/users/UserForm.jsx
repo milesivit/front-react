@@ -27,12 +27,13 @@ const validationSchema = Yup.object({
 
 export default function UserForm() {
   const { users, addUser, editUser } = useUserContext();
+  const [showPassword, setShowPassword] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
   const [initialValues, setInitialValues] = useState({
     nombre: "",
-    contrasenia: "",
     email: "",
+    contrasenia: "",
     edad: 0,
   });
 
@@ -44,8 +45,8 @@ export default function UserForm() {
       if (user) {
         setInitialValues({
           nombre: user.nombre || "",
-          contrasenia: user.contrasenia || "",
           email: user.email || "",
+          contrasenia: user.contrasenia || "",
           edad: user.edad || 0,
         });
       }
@@ -89,21 +90,6 @@ export default function UserForm() {
           </div>
 
           <div>
-            <label>Contraseña:</label>
-            <Field
-              name="contrasenia"
-              type="password"
-              className="p-inputtext p-component p-mb-3"
-              placeholder="Contraseña del usuario"
-            />
-            <ErrorMessage
-              name="contrasenia"
-              component="div"
-              className="p-text-danger"
-            />
-          </div>
-
-          <div>
             <label>Email:</label>
             <Field
               name="email"
@@ -117,6 +103,31 @@ export default function UserForm() {
               className="p-text-danger"
             />
           </div>
+
+          <div>
+            <label>Contraseña:</label>
+            <div className="p-inputgroup p-mb-1">
+              <Field
+                name="contrasenia"
+                type={showPassword ? "text" : "password"}
+                placeholder="Contraseña del usuario"
+                className="p-inputtext p-component"
+              />
+              <span
+                className="p-inputgroup-addon"
+                style={{ cursor: "pointer" }}
+                onClick={() => setShowPassword((prev) => !prev)}
+              >
+                <i className={`pi ${showPassword ? "pi-eye-slash" : "pi-eye"}`} />
+              </span>
+            </div>
+            <ErrorMessage
+              name="contrasenia"
+              component="div"
+              className="p-text-danger"
+            />
+          </div>
+
 
           <div>
             <label>Edad:</label>
