@@ -12,7 +12,7 @@ Este repositorio contiene el frontend de una aplicación CRUD de productos y usu
 ## Clonar el repositorio
 
 ```bash
-git clone [https://github.com/milesivit/back-nodejs.git](https://github.com/milesivit/front-react.git)
+git clone https://github.com/milesivit/front-react.git
 cd front-react
 ```
 
